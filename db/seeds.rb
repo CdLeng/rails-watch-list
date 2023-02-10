@@ -11,7 +11,7 @@ movies = JSON.parse(movies_url)['results']
 config_url = URI.open("https://api.themoviedb.org/3/configuration?api_key=#{api_key}").read
 config_images = JSON.parse(config_url)['images']
 images_base_url = config_images['base_url']
-poster_size = config['poster_sizes'][3]
+poster_size = config_images['poster_sizes'][4]
 
 movies.each do |movie|
   new_movie = Movie.create(title: movie['original_title'],

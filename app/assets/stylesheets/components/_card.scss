@@ -1,0 +1,99 @@
+.card-grid {
+display: grid;
+gap: 10px;
+grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card-category {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  border-radius: 10px;
+  background-size: cover;
+}
+
+.card-category img {
+  opacity: 0.5;
+}
+.card-category a {
+ color: white;
+ text-shadow: 1px 1px 2px black ;
+ text-decoration: none;
+}
+
+.card-category .card-link {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.card-category .card-delete {
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  font-weight: bold;
+}
+
+.movie-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 5px;
+  gap: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  height: 250px;
+  background-size: cover;
+}
+
+.movie-card .movie-background {
+  flex-basis: 30%;
+  object-fit: cover;
+  object-position: top;
+  height: 100%;
+}
+
+.movie-card .movie-card-overview {
+  flex-basis: 50%;
+}
+
+.movie-card .movie-card-overview .movie-description {
+  font-size: 18px;
+}
+
+.movie-card .movie-card-comment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  flex-basis: 20%;
+  height: 100%;
+}
+
+.movie-card .movie-card-comment .delete {
+
+}
+
+.movie-card .movie-card-comment .movie-card-quote {
+  display: flex;
+  gap: 5px;
+}
+
+.movie-card .movie-card-comment .movie-card-delete {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+}
+
+.movie-card .movie-card-comment .movie-card-delete a {
+  text-decoration: none;
+  color: red;
+}

@@ -1,0 +1,20 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container d-flex justify-content-start">
+    <%= link_to(lists_path) do %>
+      <%= image_tag "popcorn-logo.svg", width: "30px;" %>
+    <% end %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <ul class="navbar-nav mx-5">
+        <li class="nav-item active">
+          <%= link_to "My lists", lists_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Add list", new_list_path, class: "nav-link" %>
+        </li>
+        <!--li class="nav-item"-->
+        <!--/li-->
+    </ul>
+  </div>
+</div>

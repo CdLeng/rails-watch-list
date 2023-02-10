@@ -1,10 +1,20 @@
-<div class="container">
-  <div class="row col-6">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://media.wbur.org/wp/2020/12/GettyImages-1150049038-1000x630.jpg);">
+  <div class="container">
+    <h1>Watch list</h1>
+    <p>Have all your movies saved in an convenient list.</p>
+  </div>
+</div>
+<div class="container my-5">
+  <div class="row">
     <h2>Lists overview</h2>
-      <ul class="list-group">
-      <% @lists.each do |list| %>
-        <li class="list-group-item"><%= list.name %></li>
-      <% end %>
-      </ul>
+    <%= link_to('Make a new movie list', list_new_path, class: 'btn btn-primary col-4 my-3')%>
+      <div class="card-grid my-3">
+        <% @lists.each do |list| %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.s-bol.com/qDxorO3GOZAk/G53YZWy/550x369.jpg);">
+              <h3><%= link_to list.name, list_path(list), class: "card-link" %></h3>
+              <%= link_to('Delete', list_delete_path(list), class: "card-delete", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' })  %>
+            </div>
+        <% end %>
+      </div>
   </div>
 </div>

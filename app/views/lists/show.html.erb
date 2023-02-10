@@ -1,2 +1,34 @@
-<h2><%= @list.name %></h2>
-<%= link_to('Create a new bookmark', bookmark_new_path(@list)) %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://media.wbur.org/wp/2020/12/GettyImages-1150049038-1000x630.jpg);">
+  <div class="container d-flex justify-content-center flex-column col-1">
+    <h1 class="my-3"><%= @list.name %></h1>
+    <button type="button" class="btn btn-primary" style="pointer-events: none;"><%= @list.bookmarks.count %> movies</button>
+  </div>
+</div>
+<div class="container my-5">
+  <h4>My saved bookmarks</h4>
+  <div class="col-8 d-flex justify-content-end">
+    <%= link_to 'Add a movie to the list', bookmark_new_path(@list), class: "btn btn-primary p3" %>
+   </div>
+  <div class="movie-grid">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="movie-card">
+        <%= image_tag bookmark.movie.poster_url, class: "movie-background"%>
+        <div class= "movie-card-overview">
+          <h4><strong><%= bookmark.movie.title %></strong>
+          <%= bookmark.movie.rating %> <i class="fa-solid fa-star text-warning"></i></h4>
+          <p class="movie-description"><%= bookmark.movie.overview %></p>
+        </div>
+        <div class="movie-card-comment">
+          <div class="movie-card-quote">
+            <i class="fa-solid fa-quote-left"></i>
+            <p><%= bookmark.comment %></p>
+          </div>
+          <div class="movie-card-delete">
+          <i class="fa-sharp fa-solid fa-trash"></i>
+          <%= link_to('Delete', bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' })  %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
