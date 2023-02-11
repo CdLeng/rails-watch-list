@@ -10,7 +10,13 @@
     <%= link_to('Make a new movie list', list_new_path, class: 'btn btn-primary col-4 my-3')%>
       <div class="card-grid my-3">
         <% @lists.each do |list| %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.s-bol.com/qDxorO3GOZAk/G53YZWy/550x369.jpg);">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(
+              <% if list.photo.key %>
+                <%= cl_image_path list.photo.key %>
+              <% else %>
+                <%= asset_path('movie_theater.jpg') %>
+              <% end %>
+              );">
               <h3><%= link_to list.name, list_path(list), class: "card-link" %></h3>
               <%= link_to('Delete', list_delete_path(list), class: "card-delete", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' })  %>
             </div>
