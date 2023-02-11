@@ -1,7 +1,7 @@
 .card-grid {
-display: grid;
-gap: 10px;
-grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .card-category {
@@ -18,9 +18,9 @@ grid-template-columns: 1fr 1fr 1fr;
   opacity: 0.5;
 }
 .card-category a {
- color: white;
- text-shadow: 1px 1px 2px black ;
- text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px 2px black ;
+  text-decoration: none;
 }
 
 .card-category .card-link {
@@ -74,10 +74,6 @@ grid-template-columns: 1fr 1fr 1fr;
   flex-direction: column;
   flex-basis: 20%;
   height: 100%;
-}
-
-.movie-card .movie-card-comment .delete {
-
 }
 
 .movie-card .movie-card-comment .movie-card-quote {
