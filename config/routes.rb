@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get :root, to: redirect('lists')
   get 'lists', to: 'lists#index'
   get 'lists/new', to: 'lists#new', as: :list_new
   get 'lists/:id/bookmarks/new', to: 'bookmarks#new', as: :bookmark_new
