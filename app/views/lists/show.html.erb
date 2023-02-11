@@ -1,4 +1,10 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key %>');">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(
+    <% if @list.photo.key %>
+      <%= cl_image_path @list.photo.key %>
+    <% else %>
+      <%= asset_path('movie_theater.jpg') %>
+    <% end %>
+    );">
   <div class="container d-flex justify-content-center flex-column col-1">
     <h1 class="my-3"><%= @list.name %></h1>
     <button type="button" class="btn btn-primary" style="pointer-events: none;"><%= @list.bookmarks.count %> movies</button>

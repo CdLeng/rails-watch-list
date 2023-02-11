@@ -1,0 +1,5 @@
+<% if list.photo.key %>
+  <%= cl_image_path list.photo.key %>
+<% else %>
+  <%= asset_path('movie_theater.jpg') %>
+<% end %>
